@@ -1,8 +1,22 @@
-{% extends  "base.jinja" %}
+{% extends "base.jinja" %}
 {% block content %}
 
-<div>
-show a book here
+<div class="book">
+    <div class="content">
+        {{book.title}}
+        <div class="genre">
+            {{book.genre}}
+        </div>
+        <div class="author">
+            {{book.author.name}}
+        </div>
+        <form class="form-inline" action="/books/{{ book.id }}/edit" method="">
+            <input type="submit" value="Edit">
+        </form>
+        <form class="form-inline" action="/books/{{ book.id }}/delete" method="POST">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
 </div>
 
 {% endblock %}

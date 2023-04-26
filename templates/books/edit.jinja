@@ -1,0 +1,52 @@
+{% extends "base.jinja" %}
+{% block content %}
+
+{# <form action="/books/{{book.id}}" method="post">
+  <div>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" value="{{task.description}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="duration">Duration:</label>
+    <input type="number" id="duration" name="duration" value="{{task.duration}}" required>
+  </div>
+
+  <div>
+    <label for="user">User:</label>
+    <select id="user" name="user_id">
+      {% for user in all_users %}
+        <option value="{{ user.id }}"
+          {% if task.user.id== user.id %} selected="selected"{% endif %}>
+          {{ user.first_name }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <button type="submit">Update Task</button>
+
+</form> #}
+
+<form action="/books/{{book.id}}" method="post">
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="{{book.title}}" placeholder="title" required>
+    </div>
+
+    <div>
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" value="{{book.genre}}" placeholder="genre" required>
+    </div>
+
+    <div>
+        <label for="author">author:</label>
+        <input type="text" id="author" name="author" value="{{book.author.name}}" placeholder="author" required>
+    </div>
+
+
+    <button type="submit">Update Book</button>
+
+</form>
+
+{% endblock %}
